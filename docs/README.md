@@ -106,7 +106,7 @@ This workflow can be illustrated as the first figure of this [blog post](https:/
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
 ### GitHub Settings
-To enforce branch protections (i.e. only a maintainer may commit to `develop` or `master`, follow this steps in (this article)[https://help.github.com/articles/enabling-branch-restrictions/]. This repository has example protections in place.
+To enforce branch protections (i.e. only allow a maintainer to commit to `develop` or `master`), follow the steps in [this article](https://help.github.com/articles/enabling-branch-restrictions/). This repository has example protections in place.
 
 ### General Guidelines
 
@@ -114,7 +114,7 @@ To enforce branch protections (i.e. only a maintainer may commit to `develop` or
 * See commit message guidelines that were previously described.
 * Use simple but informative names for topic branches.
 * Use tags to denote major releases.
-* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown here: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/.
+* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown [here]( https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/).
 * Check to see if a pull request can be cleanly merged. If not, please attempt to resolve the merge conflicts. _Hint:_ you may find the advice [here](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow) helpful.
 
 ## Git Tips and Tricks
