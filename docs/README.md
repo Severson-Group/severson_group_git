@@ -1,4 +1,4 @@
-# demonstration_repo
+# severson_group_git
 This repository serves as a reference to using Git in the Severson Research Group and provides a tutorial on the typical Git workflow used in the Severson Group. 
 
 Links to background reading material on Git is provided and participants are guided through best-practice-based example of making commits and resolving merge conflicts. This project is also intended to be an example of how to follow these guidelines.
