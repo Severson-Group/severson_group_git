@@ -59,7 +59,7 @@ This is an alternative to Git GUI. To ensure you comply with the commit message 
   * `Display a column guide in commit message at 72 characters`
 When complete, your settings should look like this:
 
-![SourceTree Settings](images/SourceTreeConfig.png?raw=true "AMDC Block Diagram")
+![SourceTree Commit Settings](images/SourceTreeConfig.png?raw=true "SourceTree Commit Settings")
 
 ## External Diff and Merge Tools
 
@@ -157,7 +157,9 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 21. Restore `lipsum_insanity.txt` to the file that is located in the develop branch by using this command: `git checkout develop -- source/lipsum_insanity.txt`.
 22. Your working copy should now be in the same state it was before you started the tutorial. Commit your working copy.
 23. Add your full name to the end of `users.txt` and commit your changes.
-24. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the in command line and graphical Git tool. Commits can be identified by the first several digits of the commit ID.
+24. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the in command line and graphical Git tool. Commits can be identified by the first several digits of the commit ID. 
+![SourceTree Commit Settings](images/git_log_tutorial.png?raw=true "SourceTree Commit Settings")
+![SourceTree Commit Settings](images/sourcetree_log_tutorial.png?raw=true "SourceTree Commit Settings")
 25. Push your `[your-first-name_tutorial]` branch to GitHub.
 26. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
 27. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
