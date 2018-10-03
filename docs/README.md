@@ -88,7 +88,7 @@ This section provide guidance for using Git on Severson Group projects. These ar
 ## Typical Repository Workflow
 
 ### Branches
-In a typical repository we will have two long running branches: 
+In a typical repository, we will have two long running branches: 
  * `master`: Always points to the current stable release commit. If someone clones our repository, they should be able to check out the `master` branch and everything should "work" (whatever that means for the purposes of the repository). In public repositories, the current commit that the `master` branch points to is the latest _release_ of the project and should be accompanied with relevant documentation. Only the project maintainer(s) is/are allowed to commit to this branch. Commits will typical only be done by pull requests that merge the `develop` branch into the `master` branch.
  * `develop`: Always points to a stable commit. If someone clones our project, they should be able to check out the `develop` branch and everything should "work" (whatever that means for the purposes of the repository). View this branch as a _beta_ release. This is where the current development of a project is sitting at. While everything "works", features may be incomplete or not fully documented. Only the project maintainer(s) is/are allowed to commit to this branch. Commits will typical only be done by pull requests that merge topic branches into the `develop` branch.
 
@@ -99,18 +99,17 @@ A developer checks out the `develop` branch (or another developers topic branch)
 
 When ready, the developer creates a pull request for the topic branch to be merged back into the parent branch (`develop` or another topic branch). The project maintainer(s) and other developers notice this pull request and review and comment on it within GitHub. When ready, the project maintainer(s) complete the pull request, merging the topic branch into the parent branch and delete the topic branch. 
 
-This workflow can be illustrated as the first figure of this [blog post](https://nvie.com/posts/a-successful-git-branching-model/), but without the `hotfixes` and `release` branches.
-This is a hybrid of the [Branching Workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) and [GitHub Flow](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow).
+This workflow can be illustrated as the first figure of this [blog post](https://nvie.com/posts/a-successful-git-branching-model/), but without the `hotfixes` and `release` branches. This is a hybrid of the [Branching Workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) and [GitHub Flow](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow).
 
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
 ### General Guidelines
 
-* Users be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
+* Users must be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
 * See commit message guidelines that were previously described.
 * Use simple but informative names for topic branches.
 * Use tags to denote major releases.
-* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown (here)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
+* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown here: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/.
 * Check to see if a pull request can be cleanly merged. If not, please attempt to resolve the merge conflicts. _Hint:_ you may find the advice [here](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow) helpful.
 
 ## Git Tips and Tricks
