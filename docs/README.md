@@ -59,7 +59,7 @@ This is an alternative to Git GUI. To ensure you comply with the commit message 
   * `Display a column guide in commit message at 72 characters`
 When complete, your settings should look like this:
 
-![SourceTree Settings](docs/images/SourceTreeConfig.png)
+![SourceTree Settings](docs/images/SourceTreeConfig.jpg)
 
 ## External Diff and Merge Tools
 
