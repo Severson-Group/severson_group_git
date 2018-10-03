@@ -115,5 +115,7 @@ One variant of this to be aware of is the case of public repositories. In public
 
 * `git remote update origin --prune` - Useful if a branch has been removed from a remote server, but still appears in your repository as being on that server (for example, after a pull request has been merged).
 
+* you will need to manually remove topic branches from your working copy that are no longer needed (i.e., a pull request has been completed).
+
 * `git checkout -b cool_feature` will create `cool_feature` branch based on the current commit and switch to it at the same time.
  
