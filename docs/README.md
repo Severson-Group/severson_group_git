@@ -125,6 +125,8 @@ To enforce branch protections (i.e. only allow a maintainer to commit to `develo
 
 * `git checkout -b cool_feature` will create `cool_feature` branch based on the current commit and switch to it at the same time.
  
+* `git commit --amend` will let re-write the commit message of your last commit. _CAUTION:_ Only do this to commits that have not been pushed up to the server (and have no branches based on them).
+
 # Tutorial
 This tutorial will guide you through creating a topic branch, making a commit, creating and resolving a merge conflict, and completing a pull request. You can use either Git Bash, SourceTree, GitGUI, or some other graphical Git tool to complete this tutorial. I will give some of the instructions as Git Bash commands, but there should be equivalent buttons to do these operations in your graphical Git tool. I recommend that you switch back and forth between the command line and your graphical Git tool to complete these steps.
 
@@ -135,30 +137,28 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 1. `git clone` the repository to your computer (I recommend maintaining a `ProjectSpace` folder where all of your working copies of your repository reside)
 2. Checkout the `develop` branch.
 3. Create a new topic branch named `[your-first-name_tutorial]` based on the `develop` branch. The later part of this instruction will happen automatically, since you currently have `develop` checked out when you created your topic branch.
-4. Now create a new topic branch named `make_merge_conf` based on your first topic branch.
-5. Navigate to `/source/lipsum_insanity.txt` and insert "I was here" at the very front of the first line. Somewhere in the third paragraph type "There are some english words here." 
+4. Now create a new topic branch named `make_merge_conf` based on your first topic branch. At this point, `develop`, `[your-first-name_tutorial]`, and `merge_conf` should all point to the same commit. You can verify this by typing `git log` and noting the text in the commit header line for the current commit has these branches labeled: `commit ff7524da1e02407f8e3798cd4e90613c391c7ec6 (HEAD -> make_merge_conf, origin/develop, eric_tutorial, develop)`. 
+5. Navigate to `/source/lipsum_insanity.txt` and insert "I was here" as its own line at the start of the file. Somewhere in the third paragraph type "There are some english words here." 
 6. Save the file and close it.
 7. Refresh the status of your repository with `git status` and notice that Git indicates that changes have been made to `lipsum_insanity.txt`.
-8. Investigate the changes to the file using a) `git diff source/lipsum_insanity.txt` and b) `git difftool source/lipsum_insanity.txt`.
-9. Use Git's stage hunk feature to commit only the change to the first line of lipsum_insanity.txt. Use a commit message that follows our group guidelines.
+8. Investigate the changes to the file using a) `git diff source/lipsum_insanity.txt` and b) `git difftool source/lipsum_insanity.txt` (you could also simply run `git diff` and `git difftool` without specifying the file names).
+9. Use Git's stage hunk feature to commit only the change to the first line of lipsum_insanity.txt. Use a commit message that follows our group guidelines. Help on using the command line to stage hunks can be found [here](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging) under _Staging Patches_ -- not that you'll have to tell Git to split the file up into smaller hunks. A graphical Git tool (like SourceTree) makes this process much easier.
 10. Notice that there are remaining changes in `lipsum_insanity.txt` because you have not yet committed line 3. Commit the entire file now (again, use a commit message that follows our group guidelines)
 11. Checkout your original topic branch `[your-first-name_tutorial]`
 12. Open `lipsum_insanity.txt` and notice that your changes are gone. 
-13. Save a copy of the file as `/source/lipsum_insanity_orig.txt`
-14. Commit `lipsum_insanity_orig.txt`.
-15. Open `lipsum_insanity.txt` and make the same changes as in step 5 but instead use the these phases: "The correct answer is 5" and "More text to test".
-16. Commit your changes to `lipsum_insanity.txt`
-17. Merge `make_merge_conf` into your current branch. This will create a merge conflict.
-18. Investigate the merge conflict by opening up the file in conflict `lipsum_insanity.txt` in a text editor. Note the `>>>>>>>` and `<<<<<<<` characters that Git uses to indicate a conflict. 
-19. You have several options to resolve the conflict - [see here](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging). In this tutorial, I want you to practice using the MergeTool approach. To start it, you can execute the command `git mergetool` (or, in SourceTree, you can right click on each file that has a merge conflict , `Resolve Conflicts` -> `Launch External Merge Tool`
-20. This should now open up your external merge tool (i.e. Kdiff3). If it does not, that means you have an installation problem. Fix this before proceeding. 
-21. Resolve your merge so that the text you added in step 15 is used in `lipsum_insanity.txt`. Your merge conflict is resolved when you have committed your changes into Git. At any point before you commit, you can restart your merge by issuing `git reset --hard HEAD`. _Caution:_ This will throw away uncommitted changes on your working copy! If you issue this command, you will be restored to step 17.
-22. Commit your resolved merge conflict into Git to finish your merge. For merges, it is fine to use the default merge commit message the Git generates for you.
-23. Restore `lipsum_insanity.txt` to its original state by using `lipsum_insanity_orig.txt`, delete `lipsum_insanity_orig.txt`.
-24. Your working copy should now be in the same state it was before you started the tutorial. Commit your working copy.
-25. Add your full name to the end of `users.txt` and commit your changes.
-26. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the command line and graphical git. Commits can be identified by the first several digits of the commit ID.
-27. Push your `[your-first-name_tutorial]` branch to GitHub.
-28. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
-29. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
-30. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
+13. Make the same changes as in step 5 but instead use these phases: "The correct answer is 5" and "More text to test".
+14. Commit your changes to `lipsum_insanity.txt`
+15. Merge `make_merge_conf` into your current branch. This will create a merge conflict.
+16. Investigate the merge conflict by opening up the file in conflict `lipsum_insanity.txt` in a text editor. Note the `>>>>>>>` and `<<<<<<<` characters that Git uses to indicate a conflict. 
+17. You have several options to resolve the conflict - [see here](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging). In this tutorial, I want you to practice using the MergeTool approach. To start it, you can execute the command `git mergetool` (or, in SourceTree, you can right click on each file that has a merge conflict , `Resolve Conflicts` -> `Launch External Merge Tool`
+18. This should now open up your external merge tool (i.e. Kdiff3). If it does not, that means you have an installation problem. Fix this before proceeding. 
+19. Resolve your merge so that the text you added in step 13 is used in `lipsum_insanity.txt`. Your merge conflict is resolved when you have committed your changes into Git. At any point before you commit, you can restart your merge by issuing `git reset --hard HEAD`. _Caution:_ This will throw away uncommitted changes on your working copy! If you issue this command, you will be restored to step 15.
+20. Commit your resolved merge conflict into Git to finish your merge. For merges, it is fine to use the default merge commit message the Git generates for you.
+21. Restore `lipsum_insanity.txt` to the file that is located in the develop branch by using this command: `git checkout develop -- source/lipsum_insanity.txt`.
+22. Your working copy should now be in the same state it was before you started the tutorial. Commit your working copy.
+23. Add your full name to the end of `users.txt` and commit your changes.
+24. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the command line and graphical git. Commits can be identified by the first several digits of the commit ID.
+25. Push your `[your-first-name_tutorial]` branch to GitHub.
+26. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
+27. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
+28. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
