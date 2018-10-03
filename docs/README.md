@@ -88,7 +88,7 @@ This section provide guidance for using Git on Severson Group projects. These ar
 ## Typical Repository Workflow
 
 ### Branches
-In a typical repository we will have two long running branches: 
+In a typical repository, we will have two long running branches: 
  * `master`: Always points to the current stable release commit. If someone clones our repository, they should be able to check out the `master` branch and everything should "work" (whatever that means for the purposes of the repository). In public repositories, the current commit that the `master` branch points to is the latest _release_ of the project and should be accompanied with relevant documentation. Only the project maintainer(s) is/are allowed to commit to this branch. Commits will typical only be done by pull requests that merge the `develop` branch into the `master` branch.
  * `develop`: Always points to a stable commit. If someone clones our project, they should be able to check out the `develop` branch and everything should "work" (whatever that means for the purposes of the repository). View this branch as a _beta_ release. This is where the current development of a project is sitting at. While everything "works", features may be incomplete or not fully documented. Only the project maintainer(s) is/are allowed to commit to this branch. Commits will typical only be done by pull requests that merge topic branches into the `develop` branch.
 
@@ -105,11 +105,11 @@ One variant of this to be aware of is the case of public repositories. In public
 
 ### General Guidelines
 
-* Users be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
+* Users must be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
 * See commit message guidelines that were previously described.
 * Use simple but informative names for topic branches.
 * Use tags to denote major releases.
-* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown (here)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
+* Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown here: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/.
 
 ## Git Tips and Tricks
 
