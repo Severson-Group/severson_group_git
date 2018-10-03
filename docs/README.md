@@ -25,9 +25,7 @@ Key aspects of a commit message:
 
  * The maximum line length should be 72 characters. 
  * Insert a blank line between paragraphs and bulleted lists.
- * Use the imperative present tense in your subject line. 
- 
-...As the Git patch guidelines (https://git.kernel.org/pub/scm/git/git.git/tree/Documentation/SubmittingPatches) state: 
+ * Use the imperative present tense in your subject line.  A helpful example can be found in the [Git patch guidelines](https://git.kernel.org/pub/scm/git/git.git/tree/Documentation/SubmittingPatches): 
 >Describe your changes in imperative mood, e.g. "make xyzzy do frotz" instead of "[This patch] makes xyzzy do frotz" or "[I] changed xyzzy to do frotz", as if you are giving orders to the codebase to change its behavior.
 
 # Setup and Tools for Git:
@@ -47,20 +45,21 @@ You may optionally want to install an advanced text editor. This may be useful f
 
 I recommend Notepad++ https://notepad-plus-plus.org/
 
-If you install this prior to Git, the Git installation tool will give you an option to use Notepad++ as your default editor. If you would like to make Notepad++ your default editor after you have installed Git, you can run this command from Git Bash: `git config --global core.editor “’C:/Program Files (x86)/Notepad++/notepad++.exe’ -multiInst -nosession”`
+If you install this prior to Git, the Git installation tool will give you an option to use Notepad++ as your default editor. If you would like to make Notepad++ your default editor after you have installed Git, you can run this command from Git Bash: `git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"`
 
 ## Graphical Git Interface
 Git comes with GitGUI, which many people are happy with. I personally use and recommend Atlassian SourceTree https://www.sourcetreeapp.com/
 
 This is an alternative to Git GUI. To ensure you comply with the commit message maximum line length, you way wish to configure SourceTree as follows:
- 1. In SourceTree go to Tools -> Options
- 2. Click the General Tab and scroll down to Commit Settings.
- 3. Check the following options: 
-..*`Use fixed-width font for commit messages`
-..*`Spell check commit messages in English (US)`
-..*`Display a column guide in commit message at 72 characters`
+1. In SourceTree go to Tools -> Options
+2. Click the General Tab and scroll down to Commit Settings.
+3. Check the following options: 
+  * `Use fixed-width font for commit messages`
+  * `Spell check commit messages in English (US)`
+  * `Display a column guide in commit message at 72 characters`
 When complete, your settings should look like this:
-![SourceTree Settings](../images/SourceTreeConfig.png)
+
+![SourceTree Settings](docs/images/SourceTreeConfig.png)
 
 ## External Diff and Merge Tools
 
@@ -76,11 +75,9 @@ These tools can be linked to Git by editing the `diff`, `merge`, `difftool`, and
 
 ### Kdiff3
 
-```git config --global merge.tool kdiff3
+```
+git config --global merge.tool kdiff3
 git config --global mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
-
 git config --global diff.guitool kdiff3
-git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"```
- 
-
- 
+git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+```
