@@ -99,7 +99,8 @@ A developer checks out the `develop` branch (or another developers topic branch)
 
 When ready, the developer creates a pull request for the topic branch to be merged back into the parent branch (`develop` or another topic branch). The project maintainer(s) and other developers notice this pull request and review and comment on it within GitHub. When ready, the project maintainer(s) complete the pull request, merging the topic branch into the parent branch and delete the topic branch. 
 
-This is the workflow that is described in the first figure of this [blog post](https://nvie.com/posts/a-successful-git-branching-model/), but without the `hotfixes` and `release` branches.
+This workflow can be illustrated as the first figure of this [blog post](https://nvie.com/posts/a-successful-git-branching-model/), but without the `hotfixes` and `release` branches.
+This is a hybrid of the [Branching Workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) and [GitHub Flow](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow).
 
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
@@ -110,6 +111,7 @@ One variant of this to be aware of is the case of public repositories. In public
 * Use simple but informative names for topic branches.
 * Use tags to denote major releases.
 * Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown (here)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
+* Check to see if a pull request can be cleanly merged. If not, please attempt to resolve the merge conflicts. _Hint:_ you may find the advice [here](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow) helpful.
 
 ## Git Tips and Tricks
 
