@@ -103,6 +103,9 @@ This workflow can be illustrated as the first figure of this [blog post](https:/
 
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
+### GitHub Settings
+To enforce branch protections (i.e. only a maintainer may commit to `develop` or `master`, follow this steps in (this article)[https://help.github.com/articles/enabling-branch-restrictions/]. This repository has example protections in place.
+
 ### General Guidelines
 
 * Users must be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
