@@ -79,7 +79,7 @@ These tools can be linked to Git by editing the `diff`, `merge`, `difftool`, and
 git config --global merge.tool kdiff3
 git config --global mergetool.kdiff3.cmd "\"C:/Program Files/Kdiff3/kdiff3\" --L1 \"\$MERGED (Base)\" --L2 \"\$MERGED (Local)\" --L3 \"\$MERGED (Remote)\" -o \"\$MERGED\" \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\""
 git config --global diff.guitool kdiff3
-git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
+git config --global difftool.kdiff3.cmd "\"C:/Program Files/Kdiff3/kdiff3\" \$LOCAL \$REMOTE"
 ```
 
 Note that the path may need to be updated based on the install location of Kdiff3.
