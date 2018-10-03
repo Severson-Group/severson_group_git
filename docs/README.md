@@ -37,8 +37,10 @@ _Note:_ Check whether these tools are installed first! Several of these programs
 At a minimum, you'll need to install Git on your PC: https://git-scm.com/
 
 After installing Git, configure your user name and email:
-```git config --global user.name “First Last”
-git config --global user.email myemail@wisc.edu```
+```
+git config --global user.name “First Last”
+git config --global user.email myemail@wisc.edu
+```
 
 ### Text Editor
 You may optionally want to install an advanced text editor. This may be useful for commit messages and general text editting that comes up with Matlab and C development. 
