@@ -7,11 +7,16 @@ Links to background reading material on Git is provided and participants are gui
 # Git Usage Reference Material and Guidelines
 
 ## Basics of Git:
-Review the Pro Git book, available here: https://git-scm.com/book/en/v2/ . Chapters 1-3 and 6.1 - 6.3 are especially important.
+Review the [Pro Git book](https://git-scm.com/book/en/v2/). Chapters 1-3 and 6.1 - 6.3 are especially important.
 Specifically, please familiarize yourself with the following basic Git concepts:
 
 1. Basic command line operations. At a bare minimum, familiarize yourself with each of these commands: `git clone`, `git add`, `git commit`, `git pull`, `git push`, `git branch`, `git checkout`, and `git merge` (these are all covered in the first 3 chapters of the Pro Git book).
 
+2. Familiarize yourself with the concepts of commits, the staging area, branches, and merging.
+
+3. In most repositories, we will use a hybrid of [Branching Workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) and [GitHub Flow](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow).
+
+4. Typically repositories will be hosted in GitHub within the Severson Group (https://github.com/severson-group). This means that in a typical workflow a repository will have one remote, which will be the GitHub server.
 
 ## Proper Commit Messages
 Review *Commit Guidelines* in Section 5.2 of the Pro Git book (https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project) and  https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53.
@@ -26,8 +31,7 @@ Key aspects of a commit message:
 >Describe your changes in imperative mood, e.g. "make xyzzy do frotz" instead of "[This patch] makes xyzzy do frotz" or "[I] changed xyzzy to do frotz", as if you are giving orders to the codebase to change its behavior.
 
 # Setup and Tools for Git:
-
-_Note:_ Check whether these tools are installed first! Several of these programs are already installed and configured on the Severson Group servers.
+_Note:_ Check whether these tools are installed first! Several of these programs are already installed and configured on the Severson Group computers.
 
 ## Git Installation
 At a minimum, you'll need to install Git on your PC: https://git-scm.com/
@@ -61,9 +65,10 @@ When complete, your settings should look like this:
 External tools for Diff and Merge operations are useful when working in repositories with several collaborators. These tools can be linked into Git so that you can invoke them from the command line or from a graphical GUI interface such as SourceTree. 
 
 Here are recommended tools that support both Diffs and three way merges (use just one of these) for Windows:
- * Kdiff3: http://kdiff3.sourceforge.net/ (free tool)
- * P4merge: http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools (free tool)
- * Exam Diff Pro: https://www.prestosoft.com/edp_examdiffpro.asp (paid tool)
+ * Kdiff3: http://kdiff3.sourceforge.net/ _free tool_
+ * P4merge: http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools _free tool_
+ * Diffmerge: https://sourcegear.com/diffmerge/ _free tool_
+ * Exam Diff Pro: https://www.prestosoft.com/edp_examdiffpro.asp _paid tool_
 
 These tools can be linked to Git by editing the `diff`, `merge`, `difftool`, and `mergetool` settings as follows:
 
@@ -74,4 +79,6 @@ git config --global mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
 
 git config --global diff.guitool kdiff3
 git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"```
+ 
+
  
