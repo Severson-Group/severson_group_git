@@ -1,17 +1,32 @@
-# severson_group_git
+# 0. severson_group_git
 This repository serves as a reference to using Git in the Severson Research Group and provides a tutorial on the typical Git workflow used in the Severson Group. 
 
 Links to background reading material on Git is provided and participants are guided through best-practice-based example of making commits and resolving merge conflicts. This project is also intended to be an example of how to follow these guidelines.
 
-## Table of Contents
-1. [Git Reference Material and Guidelines](#ref_material)
+## 0.1 Table of Contents
+1. [Git Reference Material](#ref_material)
+	1. [Basics of Git](#sub_basics)
+	1. [Proper Commit Messages](#sub_commit_msg)
 2. [Git Installation and Configuration](#setup-tools)
+	1. [Git Installation](#sub_install)
+	1. [Graphical Git Interface](#sub_git_gui)
+	1. [Text Editor](#sub_text_editor)
+	1. [External Diff and Merge Tools](#sub_ext_diff_merge)
+		1. [Kdiff3](#sub_sub_kdiff3)
 3. [Severson Group Git Workflow and Guidelines](#group-git)
+	1. [Typical Repository Workflow](#sub_repo_workflow)
+		1. [Branches](#sub_sub_branches)
+		1. [Typical Workflow](#sub_sub_workflow)
+	1. [GitHub Settings](#sub_github)
+	1. [General Guidelines](#sub_guidelines)
+	1. [Git Tips and Tricks](#sub_git_tips)
 4. [Tutorial](#tutorial)
+	1. [Tutorial Steps](#sub_tutorial_steps)
 
 <a name="ref_material"></a>
-# 1. Git Reference Material and Guidelines
+# 1. Git Reference Material
 
+<a name="sub_basics"></a>
 ## 1.1 Basics of Git:
 Review the [Pro Git book](https://git-scm.com/book/en/v2/). Chapters 1-3 and 6.1 - 6.3 are especially important.
 Specifically, please familiarize yourself with the following basic Git concepts:
@@ -24,6 +39,7 @@ Specifically, please familiarize yourself with the following basic Git concepts:
 
 4. Typically repositories will be hosted in GitHub within the Severson Group (https://github.com/severson-group). This means that in a typical workflow a repository will have one remote, which will be the GitHub server.
 
+<a name="sub_commit_msg"></a>
 ## 1.2 Proper Commit Messages
 Review *Commit Guidelines* in [Section 5.2 of the Pro Git book](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project) and this helpful [Gist](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53).
 
@@ -38,6 +54,7 @@ Key aspects of a commit message:
 # 2. Git Installation and Configuration:
 _Note:_ Check whether these tools are installed first! Several of these programs are already installed and configured on the Severson Group computers.
 
+<a name="sub_install"></a>
 ## 2.1 Git Installation
 At a minimum, you'll need to install Git on your PC: https://git-scm.com/
 
@@ -47,13 +64,7 @@ git config --global user.name “First Last”
 git config --global user.email myemail@wisc.edu
 ```
 
-## 2.2 Text Editor
-You may optionally want to install an advanced text editor. This may be useful for commit messages and general text editting that comes up with Matlab and C development. 
-
-I recommend Notepad++ https://notepad-plus-plus.org/.
-
-If you install this prior to Git, the Git installation tool will give you an option to use Notepad++ as your default editor. If you would like to make Notepad++ your default editor after you have installed Git, you can run this command from Git Bash: `git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"`
-
+<a name="sub_git_gui"></a>
 ## 2.2 Graphical Git Interface
 Git comes with GitGUI, which many people are happy with. I personally use and recommend [Atlassian SourceTree](https://www.sourcetreeapp.com/)
 
@@ -68,7 +79,17 @@ When complete, your settings should look like this:
 
 ![SourceTree Commit Settings](images/SourceTreeConfig.png?raw=true "SourceTree Commit Settings")
 
-## 2.3 External Diff and Merge Tools
+<a name="sub_text_editor"></a>
+## 2.3 Text Editor
+You may optionally want to install an advanced text editor. This may be useful for commit messages and general text editting that comes up with Matlab and C development. 
+
+I recommend Notepad++ https://notepad-plus-plus.org/.
+
+If you install this prior to Git, the Git installation tool will give you an option to use Notepad++ as your default editor. If you would like to make Notepad++ your default editor after you have installed Git, you can run this command from Git Bash: `git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"`
+
+
+<a name="sub_ext_diff_merge"></a>
+## 2.4 External Diff and Merge Tools
 
 External tools for Diff and Merge operations are useful when working in repositories with several collaborators. These tools can be linked into Git so that you can invoke them from the command line or from a graphical GUI interface such as SourceTree. 
 
@@ -80,7 +101,8 @@ Here are recommended tools that support both Diffs and three way merges (use jus
 
 These tools can be linked to Git by editing the `diff`, `merge`, `difftool`, and `mergetool` settings as follows:
 
-### 2.3.1 Kdiff3
+<a name="sub_sub_kdiff3"></a>
+### 2.4.1 Kdiff3
 
 ```
 git config --global merge.tool kdiff3
@@ -95,8 +117,10 @@ Note that the path may need to be updated based on the install location of Kdiff
 # 3. Severson Group Git Workflow and Guidelines
 This section provide guidance for using Git on Severson Group projects. These are typical or recommended guidelines. Individual projects may have specific needs and deviate from these guidelines. _That is perfectly fine_, but should be documented within that project.
 
+<a name="sub_repo_workflow"></a>
 ## 3.1 Typical Repository Workflow
 
+<a name="sub_sub_branches"></a>
 ### 3.1.1 Branches
 In a typical repository, we will have two long running branches: 
  * `master`: Always points to the current stable release commit. If someone clones our repository, they should be able to check out the `master` branch and everything should "work" (whatever that means for the purposes of the repository). In public repositories, the current commit that the `master` branch points to is the latest _release_ of the project and should be accompanied with relevant documentation. Only the project maintainer(s) is/are allowed to commit to this branch. Commits will typical only be done by pull requests that merge the `develop` branch into the `master` branch.
@@ -104,6 +128,7 @@ In a typical repository, we will have two long running branches:
 
 The main code development will be done in "topic" branches. These branches can be created by any developer and are based off of either another topic branch or the develop branch. Developers create a topic branch when they want to add a new feature or fix a bug. The topic branch name should be informative based on the feature/bug they are addressing. When the topic branch is complete, it should be merged into the develop branch (or its parent topic branch) using a pull request.
 
+<a name="sub_sub_workflow"></a>
 ### 3.1.2 Typical Workflow
 A developer checks out the `develop` branch (or another developers topic branch) and decides to add a new feature or fix a bug. The developer creates a new topic branch based off of `develop` and starts committing to this topic branch. The topic branch name should be informative based on the feature/bug they are addressing. The developer may keep the branch local (only on their PC) for a while but will ultimately need to push it to the online repository. Developers are encouraged to push it up to the server frequently as a means of a backup to avoid data loss and to allow other developers to follow the topic branch progress. If the developer needs to incorporate recent changes from another branch, they may periodically merge that branch into their topic branch (or use a more advanced Git feature like "Cherry pick". 
 
@@ -113,18 +138,21 @@ This workflow can be illustrated as the first figure of this [blog post](https:/
 
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
+<a name="sub_github"></a>
 ## 3.2 GitHub Settings
 To enforce branch protections (i.e. only allow a maintainer to commit to `develop` or `master`), follow the steps in [this article](https://help.github.com/articles/enabling-branch-restrictions/). This repository has example protections in place.
 
+<a name="sub_guidelines"></a>
 ## 3.3 General Guidelines
 
 * Users must be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
-* See commit message guidelines that were previously described.
+* See commit message guidelines that were [previously described](#sub_commit_msg).
 * Use simple but informative names for topic branches.
 * Use tags to denote major releases.
 * Place a `README.md` file in each repository (either at the root level or in docs/) that contains repository specific information. `.md` stands for Markdown. You can find guidelines on how to write in Markdown [here]( https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/).
 * Check to see if a pull request can be cleanly merged. If not, please attempt to resolve the merge conflicts. _Hint:_ you may find the advice [here](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow) helpful.
 
+<a name="sub_git_tips"></a>
 ## 3.4 Git Tips and Tricks
 
 * `git remote update origin --prune` - Useful if a branch has been removed from a remote server, but still appears in your repository as being on that server (for example, after a pull request has been merged).
@@ -141,6 +169,7 @@ This tutorial will guide you through creating a topic branch, making a commit, c
 
 This tutorial assumes that you have set up external Diff and Merge tools (see above).
 
+<a name="sub_tutorial_steps"></a>
 ## 4.1 Tutorial Steps:
 
 1. `git clone` the repository to your computer (I recommend maintaining a `ProjectSpace` folder where all of your working copies of your repository reside)
