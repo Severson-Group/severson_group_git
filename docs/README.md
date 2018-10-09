@@ -198,7 +198,10 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 24. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the in command line and graphical Git tool. Commits can be identified by the first several digits of the commit ID. 
 ![Git Command Line Log](images/git_log_tutorial.PNG?raw=true "Git Command Line Log")
 ![SourceTree Log](images/sourcetree_log_tutorial.PNG?raw=true "SourceTree Log Screenshot")
-25. Push your `[your-first-name_tutorial]` branch to GitHub.
-26. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
-27. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
-28. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
+25. Use Git's debugging capability to review who has most recently changed each line of `lipsum_insanity.txt` and `users.txt`. Instructions for doing this from the command line can be found [here](https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git). You can also do this with SourceTree by right clicking on a file and choosing `Annotate Selected...`. To do this from the command line run `git blame source/users.txt` and `git blame source/lipsum_insanity.txt`. Each line of the file will be shown, prepended with the commit ID, user name, and date of the last commit that modified that line. Note the changes that you and others have made to each file. For example, in `lipsum_insanity.txt`, you should see my name next to the non-modified lines and your name next to the lines that you have modified (and restored) as part of the tutorial.
+![Git Blame](images/git_blame_tutorial.PNG?raw=true "Git Command Line Blame Screenshot")
+![SourceTree Blame](images/sourcetree_blame_tutorial.PNG?raw=true "SourceTree Blame Screenshot")
+26. Push your `[your-first-name_tutorial]` branch to GitHub.
+27. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
+28. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
+29. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
