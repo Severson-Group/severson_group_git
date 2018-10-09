@@ -199,6 +199,7 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 ![Git Command Line Log](images/git_log_tutorial.PNG?raw=true "Git Command Line Log")
 ![SourceTree Log](images/sourcetree_log_tutorial.PNG?raw=true "SourceTree Log Screenshot")
 25. Use Git's debugging capability to review who has most recently changed each line of `lipsum_insanity.txt` and `users.txt`. Instructions for doing this from the command line can be found [here](https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git). You can also do this with SourceTree by right clicking on a file and choosing `Annotate Selected...`. To do this from the command line run `git blame source/users.txt` and `git blame source/lipsum_insanity.txt`. Each line of the file will be shown, prepended with the commit ID, user name, and date of the last commit that modified that line. Note the changes that you and others have made to each file. For example, in `lipsum_insanity.txt`, you should see my name next to the non-modified lines and your name next to the lines that you have modified (and restored) as part of the tutorial.
+![Git Blame](images/git_blame_tutorial.PNG?raw=true "Git Command Line Blame Screenshot")
 ![SourceTree Blame](images/sourcetree_blame_tutorial.PNG?raw=true "SourceTree Blame Screenshot")
 26. Push your `[your-first-name_tutorial]` branch to GitHub.
 27. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
