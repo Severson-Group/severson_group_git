@@ -202,6 +202,6 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 ![Git Blame](images/git_blame_tutorial.PNG?raw=true "Git Command Line Blame Screenshot")
 ![SourceTree Blame](images/sourcetree_blame_tutorial.PNG?raw=true "SourceTree Blame Screenshot")
 26. Push your `[your-first-name_tutorial]` branch to GitHub.
-27. Log into GitHub and create a pull request to merge your topic branch into `develop`. 
+27. Log into GitHub and create a pull request to merge your topic branch into `develop`. Take this as an opportunity to practice writing an informative description in your pull request using markdown styling (a pull request description should give us the narrative of why you have made changes and any important items that the reviewer should pay attention to; your goal is to make reviewing your PR as easy and efficient for your reviewer as possible). Add an appropriate label to the pull request and a reviewer (@elsevers). 
 28. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
 29. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
