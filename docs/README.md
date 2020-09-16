@@ -176,7 +176,7 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 2. Checkout the `develop` branch.
 3. Create a new topic branch named `[your-first-name_tutorial]` based on the `develop` branch. The later part of this instruction will happen automatically, since you currently have `develop` checked out when you created your topic branch.
 4. Now create a new topic branch named `make_merge_conf` based on your first topic branch. At this point, `develop`, `[your-first-name_tutorial]`, and `merge_conf` should all point to the same commit. You can verify this by typing `git log` and noting the text in the commit header line for the current commit has these branches labeled: `commit ff7524da1e02407f8e3798cd4e90613c391c7ec6 (HEAD -> make_merge_conf, origin/develop, eric_tutorial, develop)`. 
-5. Navigate to `/source/lipsum_insanity.txt` and insert "I was here" as its own line at the start of the file. Somewhere in the third paragraph type "There are some english words here." 
+5. Ensure you have checked out the new `make_merge_conf` branch. Navigate to `/source/lipsum_insanity.txt` and insert "I was here" as its own line at the start of the file. Somewhere in the third paragraph type "There are some english words here." 
 6. Save the file and close it.
 7. Refresh the status of your repository with `git status` and notice that Git indicates that changes have been made to `lipsum_insanity.txt`.
 8. Investigate the changes to the file using a) `git diff source/lipsum_insanity.txt` and b) `git difftool source/lipsum_insanity.txt` (you could also simply run `git diff` and `git difftool` without specifying the file names).
