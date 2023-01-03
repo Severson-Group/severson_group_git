@@ -194,7 +194,7 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 20. Commit your resolved merge conflict into Git to finish your merge. For merges, it is fine to use the default merge commit message the Git generates for you.
 21. Restore `lipsum_insanity.txt` to the file that is located in the develop branch by using this command: `git checkout develop -- source/lipsum_insanity.txt`.
 22. Your working copy should now be in the same state it was before you started the tutorial. Commit your working copy.
-23. Add your full name to the end of `users.txt` and commit your changes.
+23. Add the name of your favorite cartoon character, action hero, or movie star to the end of `users.txt` and commit your changes.
 24. Take a look at your commit graph and trace back the individual commits that have led you to this point. Do this via the command line with `git log --graph --oneline --all` and via your graphical Git tool. Match the commits the in command line and graphical Git tool. Commits can be identified by the first several digits of the commit ID. 
 ![Git Command Line Log](images/git_log_tutorial.PNG?raw=true "Git Command Line Log")
 ![SourceTree Log](images/sourcetree_log_tutorial.PNG?raw=true "SourceTree Log Screenshot")
