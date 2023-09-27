@@ -17,7 +17,8 @@ Links to background reading material on Git is provided and participants are gui
 	1. [Typical Repository Workflow](#sub_repo_workflow)
 		1. [Branches](#sub_sub_branches)
 		1. [Typical Workflow](#sub_sub_workflow)
-	1. [GitHub Settings](#sub_github)
+	1. [Pull Requests](#sub_pr)
+ 	1. [GitHub Settings](#sub_github)
 	1. [General Guidelines](#sub_guidelines)
 	1. [Git Tips and Tricks](#sub_git_tips)
 4. [Tutorial](#tutorial)
@@ -132,18 +133,35 @@ The main code development will be done in "topic" branches. These branches can b
 ### 3.i.b Typical Workflow
 A developer checks out the `develop` branch (or another developers topic branch) and decides to add a new feature or fix a bug. The developer creates a new topic branch based off of `develop` and starts committing to this topic branch. The topic branch name should be informative based on the feature/bug they are addressing. The developer may keep the branch local (only on their PC) for a while but will ultimately need to push it to the online repository. Developers are encouraged to push it up to the server frequently as a means of a backup to avoid data loss and to allow other developers to follow the topic branch progress. If the developer needs to incorporate recent changes from another branch, they may periodically merge that branch into their topic branch (or use a more advanced Git feature like "Cherry pick". 
 
-When ready, the developer creates a pull request for the topic branch to be merged back into the parent branch (`develop` or another topic branch). The project maintainer(s) and other developers notice this pull request and review and comment on it within GitHub. When ready, the project maintainer(s) complete the pull request, merging the topic branch into the parent branch and delete the topic branch. 
+When ready, the developer creates a pull request (described [below](#sub_pr)) for the topic branch to be merged back into the parent branch (`develop` or another topic branch). The project maintainer(s) and other developers are assigned to review this pull request and review and comment on it within GitHub. When ready, the project maintainer(s) complete the pull request, merging the topic branch into the parent branch and delete the topic branch. 
 
 This workflow can be illustrated as the first figure of this [blog post](https://nvie.com/posts/a-successful-git-branching-model/), but without the `hotfixes` and `release` branches. This is a hybrid of the [Branching Workflows](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows) and [GitHub Flow](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow).
 
 One variant of this to be aware of is the case of public repositories. In public repositories, external developers can contribute by forking the repository to their private account and then initiating a pull request between their forked version and our hosted version.
 
+<a name="sub_pr"></a>
+## 3.ii Pull Requests
+Pull Requests (PRs) are the preferred method to merge into a branch. Please review the following references when learning how to create an effective PR:
+- [The Anatomy of a Perfect Pull Request](https://hugooodias.medium.com/the-anatomy-of-a-perfect-pull-request-567382bb6067)
+- [How to Make a Perfect Pull Request](https://betterprogramming.pub/how-to-make-a-perfect-pull-request-3578fb4c112)
+- [How to Write the Perfect Pull Request](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
+
+Effective PRs:
+- Correspond to a self-contained changeset to the repository that is manageable to review (split enormous changesets up into smaller PRs)
+- Use a self-explanatory title
+- Have a description that describes what the PR is changing and why it needs to be changed
+- Are self-contained: attach all necessary information needed for review (this might include screenshots of CAD or PDFs of website renderings) to make the reviewers' job easy
+- Assign reviewers and indicate what feedback the author desires from reviewers
+- Link to issue(s) that motivate the changeset the PR seeks to merge
+- Use markdown formatting to make the PR readable 
+
+
 <a name="sub_github"></a>
-## 3.ii GitHub Settings
+## 3.iii GitHub Settings
 To enforce branch protections (i.e. only allow a maintainer to commit to `develop` or `master`), follow the steps in [this article](https://help.github.com/articles/enabling-branch-restrictions/). This repository has example protections in place.
 
 <a name="sub_guidelines"></a>
-## 3.iii General Guidelines
+## 3.iv General Guidelines
 
 * Users must be careful to avoid operations that rebase, squash, or amend any commits that have been pushed to the server. 
 * See commit message guidelines that were [previously described](#sub_commit_msg).
@@ -153,7 +171,7 @@ To enforce branch protections (i.e. only allow a maintainer to commit to `develo
 * Check to see if a pull request can be cleanly merged. If not, please attempt to resolve the merge conflicts. _Hint:_ you may find the advice [here](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project#ch06-github_flow) helpful.
 
 <a name="sub_git_tips"></a>
-## 3.iv Git Tips and Tricks
+## 3.v Git Tips and Tricks
 
 * `git remote update origin --prune` - Useful if a branch has been removed from a remote server, but still appears in your repository as being on that server (for example, after a pull request has been merged).
 
@@ -202,6 +220,7 @@ This tutorial assumes that you have set up external Diff and Merge tools (see ab
 ![Git Blame](images/git_blame_tutorial.PNG?raw=true "Git Command Line Blame Screenshot")
 ![SourceTree Blame](images/sourcetree_blame_tutorial.PNG?raw=true "SourceTree Blame Screenshot")
 26. Push your `[your-first-name_tutorial]` branch to GitHub.
-27. Log into GitHub and create a pull request to merge your topic branch into `develop`. Take this as an opportunity to practice writing an informative description in your pull request using markdown styling (a pull request description should give us the narrative of why you have made changes and any important items that the reviewer should pay attention to; your goal is to make reviewing your PR as easy and efficient for your reviewer as possible). Add an appropriate label to the pull request and a reviewer (@elsevers). 
-28. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
-29. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
+27. Read the references on how to create a [perfect pull request](#sub_pr).
+28. Log into GitHub and create a pull request to merge your topic branch into `develop`. Take this as an opportunity to practice writing an informative description in your pull request using markdown styling (a pull request description should give us the narrative of why you have made changes and any important items that the reviewer should pay attention to; your goal is to make reviewing your PR as easy and efficient for your reviewer as possible). Add an appropriate label to the pull request and a reviewer (@elsevers). 
+29. I will inspect your pull request to see that you have completed the steps properly. If there is a problem, we'll chat via the comments and may have a meeting.
+30. After I approve your pull request, I will delete your topic branch from the server. You should then do a `git remote update origin --prune` so that your local repository realizes the branch has been removed from `origin`. Finally, delete the two local topic branches you have created.
