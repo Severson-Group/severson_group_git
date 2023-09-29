@@ -155,6 +155,9 @@ Effective PRs:
 - Link to issue(s) that motivate the changeset the PR seeks to merge
 - Use markdown formatting to make the PR readable 
 
+Examples of effective PRs:
+- [Synchronize Encoder Updates with PWM Carrier](https://github.com/Severson-Group/AMDC-Firmware/pull/317)
+- [ADC breakout board to BNC jacks](https://github.com/Severson-Group/AMDC-Hardware/pull/135)
 
 <a name="sub_github"></a>
 ## 3.iii GitHub Settings
