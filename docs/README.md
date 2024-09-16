@@ -95,7 +95,7 @@ If you install this prior to Git, the Git installation tool will give you an opt
 External tools for Diff and Merge operations are useful when working in repositories with several collaborators. These tools can be linked into Git so that you can invoke them from the command line or from a graphical GUI interface such as SourceTree. 
 
 Here are recommended tools that support both Diffs and three way merges (use just one of these) for Windows:
- * [Kdiff3](http://kdiff3.sourceforge.net/) - _free tool_
+ * [Kdiff3](https://github.com/KDE/kdiff3) - _free tool (download install files [here](https://download.kde.org/stable/kdiff3/?C=M;O=D))_
  * [P4merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) - _free tool_
  * [Diffmerge](https://sourcegear.com/diffmerge/) - _free tool_
  * [Exam Diff Pro](https://www.prestosoft.com/edp_examdiffpro.asp) _paid tool_
