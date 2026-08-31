@@ -24,3 +24,4 @@ Bugs Bunny
 Wile E. Coyote
 Alf
 Superman
+Batman
