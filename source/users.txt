@@ -25,4 +25,5 @@ Wile E. Coyote
 Alf
 Superman
 Batman
+Spiderman
 Tangiro
